@@ -18,21 +18,21 @@ namespace numero_binario
                 Console.Write("Insira o número a ser convertido para binário: ");
                 int.TryParse(Console.ReadLine(), out n1); n = n1;
                 
-                nBinarioInvertido = convert(n1, nBinarioInvertido);
+                nBinarioInvertido = Convert(n1, nBinarioInvertido);
                 string nBinario = new string(nBinarioInvertido.Reverse().ToArray()).ToString();
 
-                linha();
+                Linha();
                 Console.WriteLine($"{(n).ToString()} em binário: {nBinario}");
                 nBinario = nBinarioInvertido = null;
 
-            } while (convert_again(dnv) != "n");
+            } while (Convert_Again(dnv) != "n");
 
-            linha();
+            Linha();
             Console.Write("Programa finaizado..");
             Console.ReadKey();
         }
 
-        public static string convert (int n1, string nBinarioInvertido)
+        public static string Convert(int n1, string nBinarioInvertido)
         {
             while (n1 > 0)
             {
@@ -42,11 +42,11 @@ namespace numero_binario
             return nBinarioInvertido;
         }
 
-        public static string convert_again (string dnv)
+        public static string Convert_Again (string dnv)
         {
             do
             {
-                linha();
+                Linha();
                 Console.Write("Deseja converter outro número? [s/n] ");
                 dnv = Console.ReadLine().ToLower();
 
@@ -74,7 +74,7 @@ namespace numero_binario
             return dnv;
         }
 
-        public static void linha ()
+        public static void Linha ()
         {
             Console.WriteLine("--------------------------------------");
         }
